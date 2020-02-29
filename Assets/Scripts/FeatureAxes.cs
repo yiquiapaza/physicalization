@@ -16,10 +16,15 @@ public class FeatureAxes : MonoBehaviour
     [SerializeField]
     private GameObject element = null;
 
+    [Tooltip("Parent for elements")]
+    [SerializeField]
+    private Transform elementsParent = null;
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.GetComponent<Renderer>().material.color = colorAxes;
+        //CreateElements();
     }
 
     // Update is called once per frame
@@ -30,9 +35,14 @@ public class FeatureAxes : MonoBehaviour
 
     void CreateElements()
     {
+        float position = 0.2f;
+        GameObject temp;
         for (int i = 0; i < elements; i++ )
         {
-            Instantiate(element);
+            temp = Instantiate(element);
+            temp.transform.parent = elementsParent;
+            temp.transform.localPosition = new Vector3(position, 0.1f, 0);
+            position++;
         }
     }
 }
