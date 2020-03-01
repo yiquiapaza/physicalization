@@ -19,7 +19,7 @@ public class InteractionElement : MonoBehaviour,
         cubeTest = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         cubeTest.GetComponent<Renderer>().material.color = Color.yellow;
         cubeTest.transform.SetParent( gameObject.transform, true);
-        cubeTest.transform.localScale = new Vector3(1f, 1f, 1f);
+        cubeTest.transform.localScale = new Vector3(0.5f, 1f, 1f);
         cubeTest.transform.localPosition = new Vector3(0f, 1f, 0f);
         Debug.Log("This is a GLOBAL Position " + cubeTest.transform.position);
         Debug.Log("This is a LOCAL Position" +cubeTest.transform.localPosition);
